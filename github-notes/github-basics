@@ -1,0 +1,37 @@
+Git
+    Git is the version control software that runs locally on your machine.
+    You don't need to register for an account.
+    You don't need the internet to use it.
+    You can use Git without ever touching Github.
+
+github
+    Github is a service that hosts Git repositories in the cloud and makes it easier to collaborate with other people.
+    You do need to sign up for an account to use Github. It's an online place to share work that is done using Git.
+
+
+
+git clone <url>
+    to clone a repo
+    Git will retrieve all the files associated with the repository and will copy them to your local machine.
+    In addition, Git initializes a new repository on your machine, giving you access to the full Git history of the cloned project.
+
+
+Set-up github
+    https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+
+git remote & git remote -v
+    the git remote command is used to manage connections to remote repositories. It allows you to view repositories name. 
+    The git remote -v option is used to display more detailed information about the remote repositories, including their URLs.
+
+git remote add <name> <url>
+    To add new remote 
+    ex: git remote add origin https://github.com/astiksarathe/git-github
+    Here origin is a conventional git remote name, but its not at all 
+    speical, it's just a name for URL
+    when you clone a github repo, the default remote name setup for us 
+    is called origin. We can change it.
+
+git push <remote-name> <branch-name>
+    the git push command is used to push local changes to a remote repository.
+    ex: git push origin master
