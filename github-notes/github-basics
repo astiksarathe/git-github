@@ -45,3 +45,6 @@ git push <remote> <local-branch>:<remote-branch>
     we could do:
 
         git push origin pancake:waffle
+
+git push -u <remote-name> <branch-name>
+    -u: This option stands for "upstream." When you use -u followed by the remote name and branch name, it establishes a tracking relationship between your local branch and the remote branch. This means that in the future, you can simply use git push or git pull without specifying the remote name and branch name because Git remembers the association.
