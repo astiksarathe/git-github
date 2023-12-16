@@ -34,6 +34,7 @@ git remote add <name> <url>
 
 git push <remote-name> <branch-name>
     the git push command is used to push local changes to a remote repository.
+    If that branch does not exist, it will create a new branch on the remote and push the code.
     ex: git push origin master
 
 git push <remote> <local-branch>:<remote-branch>
