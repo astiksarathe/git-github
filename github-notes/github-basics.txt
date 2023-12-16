@@ -1,0 +1,92 @@
+Git
+    Git is the version control software that runs locally on your machine.
+    You don't need to register for an account.
+    You don't need the internet to use it.
+    You can use Git without ever touching Github.
+
+github
+    Github is a service that hosts Git repositories in the cloud and makes it easier to collaborate with other people.
+    You do need to sign up for an account to use Github. It's an online place to share work that is done using Git.
+
+git clone <url>
+    to clone a repo
+    Git will retrieve all the files associated with the repository and will copy them to your local machine.
+    In addition, Git initializes a new repository on your machine, giving you access to the full Git history of the cloned project.
+
+
+Set-up github
+    https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+
+git remote & git remote -v
+    the git remote command is used to manage connections to remote repositories. It allows you to view repositories name. 
+    The git remote -v option is used to display more detailed information about the remote repositories, including their URLs.
+
+git remote add <name> <url>
+    To add new remote 
+    ex: git remote add origin https://github.com/astiksarathe/git-github
+    Here origin is a conventional git remote name, but its not at all 
+    speical, it's just a name for URL
+    when you clone a github repo, the default remote name setup for us 
+    is called origin. We can change it.
+
+git push <remote-name> <branch-name>
+    the git push command is used to push local changes to a remote repository.
+    If that branch does not exist, it will create a new branch on the remote and push the code.
+    ex: git push origin master
+
+git push <remote> <local-branch>:<remote-branch>
+    While we want to push to a local branch up to a remote branch 
+    of the same name. we don't have to.
+
+    To push our local pancake branch up to remote branch called waffle
+    we could do:
+
+        git push origin pancake:waffle
+
+git push -u <remote-name> <branch-name> / git push --set-upstream <remote-name> <branch-name>
+    -u: This option stands for "upstream." When you use -u followed by the remote name and branch name, it establishes a tracking relationship between your local branch and the remote branch. This means that in the future, you can simply use git push or git pull without specifying the remote name and branch name because Git remembers the association.
+
+git branch -M <branch-name>
+    To Change the current branch name
+
+
+Remote Tracking Branches 
+    It's a reference to the state of the master branch on the  remote. I can't move this myself. It's like 
+    bookmark pointing to the last known commit on the master branch on origion
+
+git branch -r
+    To see the Remote Tracking Branch reference
+
+git switch <branch-name>
+    If that branch is present in GitHub but not in the local repository,
+    then git switch 'branch-name' will create a new branch locally
+    and sync this branch with the GitHub branch.
+
+git fetch
+    git fetch <remote>
+    git fetch <remote> <branch-name>
+
+    The git fetch <remote> command fetches branches and history from a specific remote repository. 
+    it only update remote tracking branches.
+
+    git fetch origin would fetch all changes from the origin
+    remote repository.
+
+    by default remote set as origin so if basically 
+    git fetch and get fetch origin both are same
+
+    We can fetch from specific branch as well by mentioning the branch name
+    'git fetch origin master'
+
+git pull <remote> <branch>
+    'git pull origin master' would fetch the latest information
+    from the origin's master branch and merge those changes into our 
+    current branch
+
+    We can directly use git pull as well then it will use origin as default remote 
+    and current tracking branch 
+
+
+
+Note: We can have multiple remote branches

@@ -1,0 +1,6 @@
+CentraLized Workflow
+    Everyone is working on a same branch (for ex: Master branch)
+
+Features Branches 
+    Rather than working on Master/Main branch, all new development 
+    should be done on separate branches

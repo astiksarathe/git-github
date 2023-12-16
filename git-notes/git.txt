@@ -1,0 +1,171 @@
+
+1) What is version control?
+   Version control is a  software that tracks and manages changes to files over time.
+   Version control systems generally allow users to revisit earlier versions of the files, compare changes between versions, undo changes, and a whole lot more.
+
+2) What is git?
+   Worlds most popular version control system
+
+
+git merge
+
+fast forward merge
+
+
+To create new branch and switch to that branch
+git checkout -b branch-name
+git switch -c branch-name
+
+git log --oneline 
+    it will give you hash of commits with one line summary
+
+
+###################################################################################################################
+                                                    Git Diff
+###################################################################################################################
+
+Untracked Files:
+    Untracked files are those that exist in your working directory but have not yet been added to Git's tracking system. 
+    That means Git hasn't recorded any previous versions of these files.
+    When you create a new file in your repository and have not run git add on it, it's considered an untracked file.
+    When you view the status using git status, untracked files are typically listed under the "Untracked files" section.
+
+Unstaged Changes:
+    Unstaged changes refer to modifications to files that are already being tracked by Git 
+    but haven't been added to the staging area. The staging area is an intermediate area where commits are prepared; 
+    changes in the staging area are what get committed to the repository's history.
+
+git diff 
+    git diff on it's own will list the changes in our working directory that are not staged.
+    compare changes in working directory
+
+git diff HEAD
+    git diff HEAD lists all the changes in working tree since your last commit 
+    This command compares your working directory (including unstaged changes) with the latest commit (HEAD)
+
+git diff HEAD [file-name] 
+    Will work for only single file, we can pass muiltple files as file comma seperated 
+
+git diff and git diff HEAD about untracked file
+    this commands will not show any changes from untracked file
+
+git diff --staged or git diff --cached 
+    Will list the changes between our staging area and list commit 
+
+git diff --staged [file-name] 
+    Will work for only single file, we can pass muiltple files as file comma seperated 
+
+
+git diff branch-name-1st..branch-name-2nd or git diff branch-name-1st branch-name-2nd
+    You can use double dots [..] or space [ ] as separator
+    we can see the difference between two branch
+
+git diff commit1..commit2 or git diff commit1 commit2
+    you can check changes between any two commits through there hashes 
+
+
+###################################################################################################################
+                                                Git Stashing
+###################################################################################################################
+
+git stash  / git stash save "Your stash message"
+
+    If we don't want to commit the changes and need to switch branches, 
+    Git generally doesn't allow us to do so if we have uncommitted changes. 
+    In such cases, we can stash those changes, switch the branch, 
+    complete our work, and then return to continue from where we left off.
+
+    git stash is a Git command that allows you to save changes that you 
+    don't want to commit immediately, but also don't want to lose or commit 
+    to your current branch. 
+
+git stash pop
+    To remove your most recently stashed changes and re-apply them in your working copy
+
+
+git stash list
+    to list down all the stashes
+
+git stash apply
+    Applies the changes from the most recent stash to the working directory and the staging area.
+    After you've stashed changes using git stash, 
+    you can use this command to reapply those changes to your current working state.
+
+git stash apply stash@{2}
+    Applies the changes from the stash at index 2 to the current working directory and staging area.
+    Apply specific stash
+
+git stash drop stash@{2}
+    To delete or drop a specific stash 
+    
+git stash clear 
+    To clear all the stashes or to delete all the stashes 
+
+
+
+###################################################################################################################
+                                        Undoing Changes & Time Travelling
+###################################################################################################################
+
+git checkout [commit-hash]
+    We can use git checkout commit-hash to view a previous commit
+
+
+git checkout HEAD~1
+
+    This command will switch to commit1 or start directly pointing to commit1
+    or 
+    we can say this command will start pointing to previous commit 
+    Suppose currently your HEAD is standing at commit1 then this command will HEAD to commit2 
+    [
+        The git checkout HEAD~1 command lets you go back to the previous version of your project. 
+        It's like taking a step back in time to the state of your code before the most recent changes. 
+        This command updates your working area to reflect the earlier version, 
+        so you can review or work with the code as it was at that point.
+    ]
+
+                                            HEAD
+                                             |
+                                        Branch (Master)
+     HEAD~3       HEAD~2       HEAD~1              |
+    commit3------commit2------commit1------commit0
+    [987f..]     [687f..]     [681f..]     [328f..]      <= hash
+
+git checkout HEAD file-name
+    This command is used to remove/discard current changes
+    HEAD => HEAD can change here based on situation like HEAD~1, HEAD~2,  HEAD~3,
+    file-name => file-name in which file we want to undo changes
+
+
+git switch -
+    This  will just take me back to whatever branch I was on last.
+
+
+git restore file-name
+    A brand new command that helps with undoing changes
+    To undo a specific file unstaged or uncommited changes
+
+git restore --source HEAD~2 file-name / git restore --source [commit hash] file-name
+    HEAD~2 and file-name we can change based on requirement
+    this will work on commited code
+
+git restore --staged file-name
+    This command is used to unstaged the file
+
+
+
+git reset [commit-hash]
+    the "git reset [commit-hash]" command will reset the changes to the specified commit, 
+    and following this action, all modifications will be moved to the staging area.
+
+    And those commits will be removed from logs as well
+
+git reset --hard [commit-hash]
+    "git reset --hard [commit-hash]" will forcefully reset the repository to the specified commit, 
+    discarding/delete all changes, and the resulting modifications will be staged.
+    (We loss the changes permanently)
+
+git revert [commit-hash]
+    git revert instead creates a brand new commit which undos/reverses the changes 
+    from a commit. Because it results in a new commit, you will be prompted to
+    enter a commit message
