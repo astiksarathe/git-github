@@ -87,6 +87,32 @@ git pull <remote> <branch>
     We can directly use git pull as well then it will use origin as default remote 
     and current tracking branch 
 
+Collaborator
+    We can add Collaborator in private repo as well
 
+README.md
+    md stands for markdown
 
-Note: We can have multiple remote branches
+Markdown 
+    It is an text to HTML conversion tool for web writers.
+    Markdown allows you to write easy to read, easy to write
+    plain text format, then convert it to structurally valid XHTML (or HTML)
+
+Github Gist
+    GitHub Gist is a feature on the GitHub platform that allows users to share code snippets, 
+    small scripts, notes, or any text-based information quickly and easily. 
+    Gists are essentially Git repositories but can contain single or multiple 
+    files that can be either public or private.
+
+Github Pages
+    GitHub Pages is a web hosting service by GitHub for hosting static websites from repositories. 
+    It supports two types of sites:
+
+    User Sites: 
+        Tied to a user's account and hosted at https://username.github.io by creating a 
+        repository named <username>.github.io.
+    Project Sites: 
+        Associated with a repository and hosted at https://username.github.io/repositoryname, 
+        typically by creating a gh-pages branch or using docs/ folder on the main branch.
+
+Note: We can have multiple remote branches 
