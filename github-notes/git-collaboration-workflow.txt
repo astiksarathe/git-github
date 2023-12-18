@@ -4,3 +4,21 @@ CentraLized Workflow
 Features Branches 
     Rather than working on Master/Main branch, all new development 
     should be done on separate branches
+
+Pull Request 
+    A pull request (PR) is a way to propose changes to a codebase hosted in a repository. 
+    It enables collaboration in software development by allowing developers to suggest 
+    modifications, have those changes reviewed, and then integrate them into the main branch. 
+    The process involves forking a repository, making changes in a dedicated branch, 
+    creating a request with a descriptive message, having the modifications reviewed,
+    addressing feedback if needed, and ultimately merging the changes into the main codebase.
+
+git merge --no-ff branch-name
+    --no-ff => No Fast Forward
+
+forking
+    Github allow us to create personal copies of the people's
+    repositories. We call those copies as "frok" of the original
+    
+    When we fork a repo, we're basically asking Github 
+    "Make me my own copy of this repo please"
