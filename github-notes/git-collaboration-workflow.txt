@@ -22,3 +22,31 @@ forking
     
     When we fork a repo, we're basically asking Github 
     "Make me my own copy of this repo please"
+
+Rebasing 
+    Rebasing, in simple terms, refers to the process of taking a series of changes or 
+    commits from one branch in a Git version control system and applying them onto another branch. 
+    It essentially moves the starting point of the branch to a different commit, 
+    allowing for a cleaner and more linear history of changes.
+
+    When you rebase a branch onto another, Git will take the changes made in the source branch 
+    and replay them on top of the target branch's latest commit. 
+    This results in a more streamlined history without the extra merge commits that often occur
+    when using other methods like merging branches together.
+
+    Rebasing can be useful to keep a cleaner history and avoid unnecessary merge commits, 
+    but it should be used cautiously, especially when collaborating with others, 
+    as it rewrites the commit history and can potentially cause conflicts if not done carefully.
+
+    There are two main ways to use git Rebase command
+    1) As an alternative to merging
+    2) As a cleaning tool
+
+    command: git rebase <branch-name>
+
+    Note: Never Rebase commits that have been shared with others.
+    if you have already pushed commits up to github.. DO Not reabase them 
+    unless you are positive no one on the team using those commits.
+
+    You do not want to rewites history that other people already have. 
+    it;s pain to reconcile the alternate history 
