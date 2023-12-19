@@ -50,3 +50,13 @@ Rebasing
 
     You do not want to rewites history that other people already have. 
     it;s pain to reconcile the alternate history 
+
+    Interactive Rebase:-
+
+        Running git rebase with the -i option will enter the interactive mode, 
+        which allows us to edit commits, add files, drop commits, etc.
+        Note that we need to specify how far back we want to rewrite commits.
+        Also, notice that we are not rebasing onto another branch.
+        Instead, we are rebasing a series of commits onto the HEAD they currently are based on.
+
+        command:- git rebase -i HEAD~4
