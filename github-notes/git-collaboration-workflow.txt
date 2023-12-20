@@ -60,3 +60,26 @@ Rebasing
         Instead, we are rebasing a series of commits onto the HEAD they currently are based on.
 
         command:- git rebase -i HEAD~4
+
+Semantic Versioning
+    The semantic versioning spec outlines a standardized versioning system for software releases. 
+    It provides a consistent way for developers to give meaning to their software releases (how big of a change is this release??)
+
+    Versions consist of three numbers separated by periods.
+    Ex:- 2.4.1
+
+    Initial Release
+        1.0.0
+
+    Patch Release
+        Patch releases normally do not contain new features or significant changes.
+        They typically signify bug fixes and other changes that do not impact how the code is used
+        1.0.1
+    Minor Release
+        Minor releases signify that new features or functionality have been added, but the project is still backwards compatible.
+        The new functionality is optional and should not force users to rewrite their own code.
+        1.1.0
+    Major Release
+        Major releases signify significant changes that is no longer backwards compatible.
+        Features may be removed or changed substantially.
+        2.0.0
