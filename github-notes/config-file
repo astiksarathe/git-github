@@ -1,0 +1,11 @@
+Git configuration settings operate across three levels:
+
+    1)Local:
+        Applied within a specific repository for tailored configurations.
+    
+    2)Global:
+        Applied to the current user account, affecting all repositories associated with that account.
+    
+    3)System:
+        Applied universally across all user accounts on the computer, 
+        impacting all repositories and users.
