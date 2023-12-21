@@ -1,0 +1,40 @@
+Global Git Config
+    Git looks for the global config file at either
+    ~/.gitconfig or ~/.config/git/config. 
+    Any configuration variables that we change in the file will be applied across all Git repos.
+    We can also alter configuration variables from the command line if preferred.
+
+Adding Aliases
+    We can easily set up Git aliases to make our Git experience a bit simpler and faster.
+    For example, we could define an alias "git ci" instead of having to type "git commit"
+
+        Git provides two primary methods to set up aliases for commands:
+
+        1) Syntax for writing directly in the config file:
+            Edit the Git configuration file and add an alias entry manually. 
+            
+            For example: 
+                a)  [alias]
+                        s = status
+                    This example creates an alias 's' for the 'status' command.
+                
+                b)  [alias]
+                        cm = commit -m
+                    This example creates an alias 'cm' for the 'commit -m' command, allowing you to add a message directly with 'git cm "your message"'.
+        
+        2) Syntax for applying through the command line (globally):
+            Use the git config command with the --global flag to set an alias. 
+            
+            For example:
+                a)  git config --global alias.s status
+                    This globally sets the 's' alias to execute the 'status' command."
+                
+                b)  git config --global alias.cm 'commit -m'
+                    This globally sets the 'cm' alias to execute the 'commit -m' command, enabling you to add a message by typing 'git cm "your message"' in the terminal.
+
+
+
+Useful links 
+https://www.durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+https://gist.github.com/mwhite/6887990
+
